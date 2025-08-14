@@ -63,7 +63,7 @@ local function isAuthorized(Player, door, usedLockpick)
 
 	if Config.AdminAccess and QBCore.Functions.HasPermission(Player.PlayerData.source, Config.AdminPermission) then
 		if Config.Warnings then
-			showWarning(Lang:t("general.warn_admin_privilege_used", {player = Player.PlayerData.name, license = Player.PlayerData.license}))
+			showWarning((Lang:t("general.warn_admin_privilege_used", {player = Player.PlayerData.name, license = Player.PlayerData.license})))
 		end
 		return true
 	end
@@ -126,7 +126,7 @@ end
 
 -- Callbacks
 
-QBCore.Functions.CreateCallback('qb-doorlock:server:setupDoors', function(_, cb)
+QBCore.Functions.CreateCallback('qb-doorlock:server:setupDoors', function(_, cb) 
 	cb(Config.DoorList)
 end)
 
